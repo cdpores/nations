@@ -14,4 +14,9 @@ class Country extends Model
     //anular campos de auditoria 
     public $timestamps=false;
     use HasFactory;
+
+    //Relacion inversa M:1 paises y region
+    public function region(){
+        return $this->belongsTo(Region:: class, 'region_id');
+    }
 }
